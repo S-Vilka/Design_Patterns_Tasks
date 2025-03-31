@@ -7,7 +7,7 @@ public class Main {
         OrganisationComponent employee2 = new Employee("Walter", 4000);
         OrganisationComponent employee3 = new Employee("Jesse", 5000);
 
-        Department devDept = new Department("Chemistry");
+        Department devDept = new Department("Development");
         devDept.add(employee2);
         devDept.add(employee3);
 

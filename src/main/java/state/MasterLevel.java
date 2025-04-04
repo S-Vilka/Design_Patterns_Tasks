@@ -11,7 +11,7 @@ public class MasterLevel extends State {
         GameCharacter character = this.getCharacter();
         character.printStatus("Master");
 
-        System.out.println("\n🏆 Congratulations!");
+        System.out.println("\n🏆 Congratulations!!!");
         System.out.println("You have reached the Master level and completed the game!");
         System.out.println("Thank you for playing!");
 

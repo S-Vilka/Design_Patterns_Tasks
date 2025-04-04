@@ -7,8 +7,7 @@ public class Main {
 
         System.out.println("----");
 
-        Printer printer2 = new EncryptedPrinter(
-                new XMLPrinter(new BasicPrinter()));
+        Printer printer2 = new EncryptedPrinter(new XMLPrinter(new BasicPrinter()));
         printer2.print("Hello World!");
     }
 }

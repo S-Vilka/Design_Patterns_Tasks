@@ -17,20 +17,6 @@ public abstract class Map {
         }
     }
 
-    public void display() {
-        if (mapTiles == null) {
-            System.out.println("Map has not been generated yet.");
-            return;
-        }
-
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < cols; j++) {
-                System.out.print(mapTiles[i][j].getCharacter() + " ");
-            }
-            System.out.println();
-        }
-    }
-
     public int getRows() {
         return rows;
     }

@@ -3,10 +3,6 @@ package factory_method.Tiles;
 import factory_method.Tile;
 
 public class Swamp implements Tile {
-    @Override
-    public char getCharacter() {
-        return 'S';
-    }
 
     @Override
     public String getType() {
@@ -15,6 +11,6 @@ public class Swamp implements Tile {
 
     @Override
     public void action() {
-        System.out.println("This is swamp");
+        System.out.println("This is a swamp.");
     }
 }

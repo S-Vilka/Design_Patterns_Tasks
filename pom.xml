@@ -9,41 +9,50 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <javafx.version>21</javafx.version> <!-- Удобно вынести версию отдельно -->
+        <javafx.version>21</javafx.version>
     </properties>
 
     <dependencies>
-        <!-- JavaFX modules -->
+        <!-- JavaFX Controls -->
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
             <version>${javafx.version}</version>
         </dependency>
+
+        <!-- JavaFX FXML (optional) -->
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-fxml</artifactId>
             <version>${javafx.version}</version>
         </dependency>
-        <!-- JavaFX Graphics is needed because we use Canvas -->
+
+        <!-- JavaFX Graphics (optional, for Canvas or advanced drawing) -->
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-graphics</artifactId>
             <version>${javafx.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.googlecode.json-simple</groupId>
+            <artifactId>json-simple</artifactId>
+            <version>1.1.1</version>
+        </dependency>
     </dependencies>
 
     <build>
         <plugins>
-            <!-- Plugin to run JavaFX applications easily -->
+            <!-- JavaFX Plugin for mvn javafx:run -->
             <plugin>
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>0.0.8</version>
                 <configuration>
-                    <mainClass>factory_method.Game</mainClass> <!-- Обязательно укажи путь к классу Game -->
+                    <mainClass>mediator.MainApp</mainClass>
                 </configuration>
             </plugin>
         </plugins>

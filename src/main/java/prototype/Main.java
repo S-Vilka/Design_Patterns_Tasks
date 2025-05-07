@@ -47,14 +47,29 @@ public class Main {
     private static void createNewRecommendation() {
         System.out.print("Enter a name for the new recommendation: ");
         String name = scanner.nextLine().trim();
+
+        if (recommendations.containsKey(name)) {
+            System.out.println("A recommendation with this name already exists.");
+            return;
+        }
+
         System.out.print("Enter the target audience: ");
         String audience = scanner.nextLine().trim();
         Recommendation rec = new Recommendation(audience);
 
-        while (true) {
-            System.out.print("Add a book to the list? (y/n): ");
-            if (!scanner.nextLine().trim().equalsIgnoreCase("y")) break;
-            rec.addBook(createBookFromInput());
+        boolean addingBooks = true;
+
+        while (addingBooks) {
+            System.out.print("Do you want to add a book? (y/n): ");
+            String answer = scanner.nextLine().trim();
+
+            if (answer.equalsIgnoreCase("y")) {
+                rec.addBook(createBookFromInput());
+            } else if (answer.equalsIgnoreCase("n")) {
+                addingBooks = false;
+            } else {
+                System.out.println("Please enter 'y' or 'n'.");
+            }
         }
 
         recommendations.put(name, rec);
@@ -75,6 +90,11 @@ public class Main {
 
         System.out.print("Enter a new name for the cloned recommendation: ");
         String newName = scanner.nextLine().trim();
+
+        if (recommendations.containsKey(newName)) {
+            System.out.println("A recommendation with this name already exists.");
+            return;
+        }
 
         System.out.print("Change the target audience? (y/n): ");
         if (scanner.nextLine().trim().equalsIgnoreCase("y")) {
